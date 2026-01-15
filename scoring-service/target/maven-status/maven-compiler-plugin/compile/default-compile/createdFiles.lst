@@ -1,0 +1,10 @@
+com/credit/scoring/ScoringServiceApplication.class
+com/credit/scoring/config/SecurityConfig.class
+com/credit/scoring/repository/UtilisateurRepository.class
+com/credit/scoring/dto/ScoringDTO.class
+com/credit/scoring/service/ScoringService.class
+com/credit/scoring/entity/Utilisateur.class
+com/credit/scoring/service/UtilisateurService.class
+com/credit/scoring/controller/ScoringController.class
+com/credit/scoring/repository/ScoringHistoriqueRepository.class
+com/credit/scoring/entity/ScoringHistorique.class

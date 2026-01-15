@@ -1,0 +1,10 @@
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/entity/ScoringHistorique.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/service/UtilisateurService.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/dto/ScoringDTO.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/repository/UtilisateurRepository.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/config/SecurityConfig.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/repository/ScoringHistoriqueRepository.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/service/ScoringService.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/ScoringServiceApplication.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/controller/ScoringController.java
+/home/yeslem/Downloads/S5/SOA/projet/scoring-service/src/main/java/com/credit/scoring/entity/Utilisateur.java
