@@ -1,0 +1,14 @@
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/repository/UtilisateurRepository.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/repository/DemandeCreditRepository.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/service/DemandeCreditService.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/entity/DemandeCredit.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/dto/DecisionDTO.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/client/DecisionClient.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/entity/Utilisateur.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/dto/DemandeCreditDTO.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/controller/DemandeCreditController.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/entity/StatutDemande.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/client/ScoringClient.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/config/SecurityConfig.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/ApplicationServiceApplication.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/service/UtilisateurService.java
