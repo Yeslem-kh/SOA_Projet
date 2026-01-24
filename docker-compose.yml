@@ -1,0 +1,116 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -proot || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  eureka-server:
+    build: ./eureka/eureka-server
+    container_name: eureka-server
+    ports:
+      - "8089:8089"
+    networks:
+      - backend
+    healthcheck:
+      # Eureka endpoint that should return 200 when ready
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8089/actuator/health | grep -q UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  application-service:
+    build: ./application-service
+    container_name: application-service
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_APPLICATION_NAME: application-service
+      APP_ADMIN_USERNAME: admin
+      APP_ADMIN_PASSWORD: admin
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/credit_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+      # Eureka client points to the eureka-server container (NOT localhost)
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8089/eureka/
+      EUREKA_INSTANCE_PREFERIPADDRESS: "true"
+
+      # Inter-service base URLs (service-id, no port)
+      SERVICE_SCORING_URL: http://scoring-service/api/scoring
+      SERVICE_DECISION_URL: http://decision-service/api/decision
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    networks:
+      - backend
+
+  scoring-service:
+    build: ./scoring-service
+    container_name: scoring-service
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_APPLICATION_NAME: scoring-service
+
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/scoring_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8089/eureka/
+      EUREKA_INSTANCE_PREFERIPADDRESS: "true"
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    networks:
+      - backend
+
+  decision-service:
+    build: ./decision-service
+    container_name: decision-service
+    ports:
+      - "8086:8086"
+    environment:
+      SPRING_APPLICATION_NAME: decision-service
+
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/decision_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8089/eureka/
+      EUREKA_INSTANCE_PREFERIPADDRESS: "true"
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    networks:
+      - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:
+    driver: bridge

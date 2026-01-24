@@ -26,9 +26,10 @@ public class ScoringClient {
 
     private final RestTemplate restTemplate;
 
-    public ScoringClient() {
-        this.restTemplate = new RestTemplate();
-    }
+    public ScoringClient(RestTemplate restTemplate) {
+    this.restTemplate = restTemplate;
+  }
+
 
     public int calculerScore(long clientId, double montant, int duree, double revenuMensuel, int age) {
         ScoringDTO request = new ScoringDTO();

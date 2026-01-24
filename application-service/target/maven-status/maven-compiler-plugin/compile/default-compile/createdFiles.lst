@@ -2,9 +2,11 @@ com/credit/application/config/SecurityConfig.class
 com/credit/application/repository/DemandeCreditRepository.class
 com/credit/application/client/ScoringClient.class
 com/credit/application/ApplicationServiceApplication.class
+com/credit/application/config/HttpClientConfig.class
 com/credit/application/controller/DemandeCreditController.class
 com/credit/application/client/ScoringClient$ScoringDTO.class
 com/credit/application/entity/StatutDemande.class
+com/credit/application/config/AdminUserSeeder.class
 com/credit/application/entity/Utilisateur.class
 com/credit/application/service/UtilisateurService.class
 com/credit/application/service/DemandeCreditService.class

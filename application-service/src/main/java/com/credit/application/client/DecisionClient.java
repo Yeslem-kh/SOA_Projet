@@ -28,9 +28,9 @@ public class DecisionClient {
 
     private final RestTemplate restTemplate;
 
-    public DecisionClient() {
-        this.restTemplate = new RestTemplate();
-    }
+    public DecisionClient(RestTemplate restTemplate) {
+    this.restTemplate = restTemplate;
+  }
 
     public DecisionDTO obtenirDecision(Long demandeId, Integer score) {
         DecisionDTO request = new DecisionDTO();

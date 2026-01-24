@@ -37,8 +37,8 @@ public class ScoringService {
             score -= 15;
             details.append("Age < 25 ans (-15). ");
         } else if (age > 60) {
-            score -= 10;
-            details.append("Age > 60 ans (-10). ");
+            score -= 15;
+            details.append("Age > 60 ans (-15). ");
         } else {
             score += 10;
             details.append("Age optimal (+10). ");
@@ -55,9 +55,10 @@ public class ScoringService {
 
         // Règle 4: Durée
         if (duree > 60) {
-            score -= 15;
+            score -= 25;
             details.append("Durée longue (-15). ");
-        } else if (duree < 12) {
+        } 
+        else if (duree < 12) {
             score += 5;
             details.append("Durée courte (+5). ");
         }

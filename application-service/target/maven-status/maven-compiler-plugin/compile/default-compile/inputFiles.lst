@@ -7,7 +7,9 @@
 /home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/entity/Utilisateur.java
 /home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/dto/DemandeCreditDTO.java
 /home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/controller/DemandeCreditController.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/config/HttpClientConfig.java
 /home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/entity/StatutDemande.java
+/home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/config/AdminUserSeeder.java
 /home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/client/ScoringClient.java
 /home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/config/SecurityConfig.java
 /home/yeslem/Downloads/S5/SOA/projet/application-service/src/main/java/com/credit/application/ApplicationServiceApplication.java
