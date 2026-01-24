@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS demande_credit (
 );
 
 -- Insertion des utilisateurs (mot de passe: admin123)
--- Le hash BCrypt pour "admin123" est: $2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K
+-- Le hash BCrypt pour "admin123" est: $2a$10$4q2/7bGqM8W8XWoNJYbEEuPmZwibi4BHlIRHPHdK93FZL4X1WL5dO
 INSERT INTO utilisateur (username, password, role, actif) VALUES 
-('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K', 'ADMIN', true),
-('user1', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K', 'USER', true);
+('admin', '$2a$10$4q2/7bGqM8W8XWoNJYbEEuPmZwibi4BHlIRHPHdK93FZL4X1WL5dO', 'ADMIN', true),
+('user1', '$2a$10$4q2/7bGqM8W8XWoNJYbEEuPmZwibi4BHlIRHPHdK93FZL4X1WL5dO', 'USER', true);
 
 -- ============================================
 -- BASE DE DONNÉES: scoring_db (scoring-service)
@@ -74,8 +74,8 @@ CREATE TABLE IF NOT EXISTS scoring_historique (
 
 -- Insertion des utilisateurs (mot de passe: admin123)
 INSERT INTO utilisateur (username, password, role, actif) VALUES 
-('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K', 'ADMIN', true),
-('user1', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K', 'USER', true);
+('admin', '$2a$10$4q2/7bGqM8W8XWoNJYbEEuPmZwibi4BHlIRHPHdK93FZL4X1WL5dO', 'ADMIN', true),
+('user1', '$2a$10$4q2/7bGqM8W8XWoNJYbEEuPmZwibi4BHlIRHPHdK93FZL4X1WL5dO', 'USER', true);
 
 -- ============================================
 -- BASE DE DONNÉES: decision_db (decision-service)
@@ -103,8 +103,8 @@ CREATE TABLE IF NOT EXISTS decision_historique (
 
 -- Insertion des utilisateurs (mot de passe: admin123)
 INSERT INTO utilisateur (username, password, role, actif) VALUES 
-('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K', 'ADMIN', true),
-('user1', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K', 'USER', true);
+('admin', '$2a$10$4q2/7bGqM8W8XWoNJYbEEuPmZwibi4BHlIRHPHdK93FZL4X1WL5dO', 'ADMIN', true),
+('user1', '$2a$10$4q2/7bGqM8W8XWoNJYbEEuPmZwibi4BHlIRHPHdK93FZL4X1WL5dO', 'USER', true);
 
 -- ============================================
 -- Vérification

@@ -78,7 +78,7 @@ INSERT INTO utilisateur (username, password, role) VALUES
 ('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqDz/VJOlVSqTWw8c4tEeQYGMrX7K', 'ADMIN');
 ```
 
-**Mot de passe** : `admin123` (hashé en BCrypt)
+**Mot de passe** : `admin` (hashé en BCrypt)
 
 ## Compilation
 
@@ -120,7 +120,7 @@ curl http://localhost:8086/api/decision/health
 ### 2. Tester le Scoring Service directement (REST)
 ```bash
 curl -X POST http://localhost:8081/api/scoring/calculer \
-  -u admin:admin123 \
+  -u admin:admin \
   -H "Content-Type: application/json" \
   -d '{
     "clientId": 1,
@@ -134,7 +134,7 @@ curl -X POST http://localhost:8081/api/scoring/calculer \
 ### 3. Créer une demande de crédit
 ```bash
 curl -X POST http://localhost:8085/api/demandes \
-  -u admin:admin123 \
+  -u admin:admin \
   -H "Content-Type: application/json" \
   -d '{
     "nomClient": "Dupont",
@@ -150,13 +150,13 @@ curl -X POST http://localhost:8085/api/demandes \
 ### 4. Traiter une demande (appelle scoring et decision)
 ```bash
 curl -X POST http://localhost:8085/api/demandes/1/traiter \
-  -u admin:admin123
+  -u admin:admin
 ```
 
 ### 5. Consulter une demande
 ```bash
 curl http://localhost:8085/api/demandes/1 \
-  -u admin:admin123
+  -u admin:admin
 ```
 
 ## Algorithme de Scoring
@@ -171,7 +171,7 @@ Seuil d'approbation : **50 points**
 ## Authentification
 
 - **Type** : HTTP Basic Authentication
-- **Identifiants** : `admin` / `admin123`
+- **Identifiants** : `admin` / `admin`
 - **Stockage** : MySQL avec hash BCrypt
 
 ## Technologies
